@@ -1,0 +1,31 @@
+CMD when using set /a
+
+	It sets a signed 32 bit int
+	You cannot use set /a higher or lower than 2147483647 and -2147483648
+
+	If you peform
+	
+	When doing operations this applies:
+
+	- If the variable doesn't exist, it will be created (initialized at 0)
+
+		Example:
+			
+			set /a thisDoesntExist+=1
+			
+			Then thisDoesntExist will equal 1
+			
+	- If it exceeds the int32 limit It will wrap the number around:
+
+		Example:
+	
+			set /a X=2147483647
+			set /a X+=1
+
+			X will now be equal to 2147483647
+			Where X+=2 X would equal -21474836488
+
+		There is a limit to this 
+
+Highest set /a is 	2147483647
+Lowest set /a is	-2147483648
